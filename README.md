@@ -15,7 +15,7 @@
 ```sh sudo docker network create pg-network ```
 
 - Start docker postgres image and map it to a memory space locally. Here I am using a virtualbox image from osboxes.org for this project. <br>
-```sh sudo docker run -it   -e POSTGRES_USER="user"   -e POSTGRES_PASSWORD="your_password"   -e POSTGRES_DB="your_db_name"   -v /home/Projects/docker-container/postgres_db:/var/lib/postgresql/data   -p 5432:5432   --network=pg-network   --name=pg-database postgres:13 ```
+```sh sudo docker run -it   -e POSTGRES_USER="user"   -e POSTGRES_PASSWORD="your_password"   -e POSTGRES_DB="your_db_name"   -v /location of local db:/var/lib/postgresql/data   -p 5432:5432   --network=pg-network   --name=pg-database postgres:13 ```
 
 - Start pgadmin image with the command below (locally). For an instance in any cloud service, the details for the cloud account will be used in place localhost and default port numbers. <br>
 ```sh sudo docker run -it   -e PGADMIN_DEFAULT_EMAIL="admin@admin.com"   -e PGADMIN_DEFAULT_PASSWORD="your_password  -p 8080:80  --network=pg-network  --name=pg-database dpage/pgadmin4 ```
